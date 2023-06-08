@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.836);
+}
+
+header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    color: azure;
+}
+
+#carrito-btn button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#carrito-btn button:hover {
+    background-color: #0056b3;
+}
+
+#total {
+    margin-left: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    color: azure;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.periferico {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: azure;
+}
+
+.periferico img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.detalles p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#carrito {
+    padding: 20px;
+}
+
+#carrito div {
+    margin-bottom: 10px;
+}
+
+#carrito button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#carrito button:hover {
+    background-color: #b82d3a;
+}
+
+#nombre {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu.dropdown-menu-right {
+    left: auto;
+    right: 0;
+    transform: translateX(-100%);
+}
+
+.dropdown-menu {
+    padding: 2rem;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+
+}
