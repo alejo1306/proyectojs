@@ -22,6 +22,8 @@
                 <option value="teclado">Teclado</option>
             </select>
             <button onclick="buscar()">Buscar</button>
+            <button onclick="ordenarPorPrecio('ascendente')">Ordenar por precio ascendente</button>
+            <button onclick="ordenarPorPrecio('descendente')">Ordenar por precio descendente</button>
         </div>
         <div id="resultados"></div>
     </main>
@@ -55,6 +57,10 @@
         crossorigin="anonymous"></script>
     <script src="./perifericos.js"></script>
     <script src="./app.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', obtenerPerifericos);
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./sweetalert.js"></script>
 </body>

@@ -1,0 +1,56 @@
+[
+    {
+        "nombre": "monitor",
+        "precio": "30Us",
+        "marca": "gigabyte",
+        "imagen": "./fotos/monitor-gigabyte.webp"
+    },
+    {
+        "nombre": "monitor",
+        "precio": "15Us",
+        "marca": "razer",
+        "imagen": "./fotos/monitor-razer.jpg"
+    },
+    {
+        "nombre": "monitor",
+        "precio": "27Us",
+        "marca": "redragon",
+        "imagen": "./fotos/monitor-redragon.jpg"
+    },
+    {
+        "nombre": "teclado",
+        "precio": "20Us",
+        "marca": "redragon",
+        "imagen": "./fotos/teclado-redragon.jpg"
+    },
+    {
+        "nombre": "teclado",
+        "precio": "17Us",
+        "marca": "razer",
+        "imagen": "./fotos/teclado-razer.jpg"
+    },
+    {
+        "nombre": "teclado",
+        "precio": "57Us",
+        "marca": "noga",
+        "imagen": "./fotos/teclado-noga.png"
+    },
+    {
+        "nombre": "mouse",
+        "precio": "60Us",
+        "marca": "redragon",
+        "imagen": "./fotos/mouse-redragon.jpeg"
+    },
+    {
+        "nombre": "mouse",
+        "precio": "25Us",
+        "marca": "razer",
+        "imagen": "./fotos/mouse-razer.jpeg"
+    },
+    {
+        "nombre": "mouse",
+        "precio": "67Us",
+        "marca": "noga",
+        "imagen": "./fotos/mouse-noga.jpeg"
+    }
+]

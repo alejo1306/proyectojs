@@ -13,6 +13,43 @@ const objetos = [
 let carrito = [];
 let totalCarrito = 0;
 
+function obtenerPerifericos() {
+    fetch('./perifericos.json')
+        .then(response => response.json())
+        .then(data => mostrarPerifericos(data))
+        .catch(error => console.log(error));
+}
+
+
+function mostrarPerifericos(data) {
+    const resultadosDiv = document.getElementById('resultados');
+    resultadosDiv.innerHTML = '';
+
+    if (data.length === 0) {
+        resultadosDiv.textContent = 'No se encontraron periféricos.';
+    } else {
+        data.forEach(periferico => {
+            const perifericoDiv = document.createElement('div');
+            perifericoDiv.className = 'periferico';
+
+            const nombre = document.createElement('p');
+            nombre.textContent = `Nombre: ${periferico.nombre}`;
+            perifericoDiv.appendChild(nombre);
+
+            const precio = document.createElement('p');
+            precio.textContent = `Precio: ${periferico.precio}`;
+            perifericoDiv.appendChild(precio);
+
+            const marca = document.createElement('p');
+            marca.textContent = `Marca: ${periferico.marca}`;
+            perifericoDiv.appendChild(marca);
+
+            resultadosDiv.appendChild(perifericoDiv);
+        });
+    }
+}
+
+
 function obtenerCarritoGuardado() {
     const carritoGuardado = localStorage.getItem('carrito');
     if (carritoGuardado) {
@@ -126,6 +163,25 @@ function buscarPerifericos(nombre) {
     return perifericosEncontrados;
 }
 
+
+function ordenarPorPrecio(orden) {
+    const resultados = document.getElementById('resultados');
+    const perifericos = Array.from(resultados.getElementsByClassName('periferico'));
+
+    perifericos.sort((a, b) => {
+        const precioA = parseFloat(a.querySelector('.detalles > p:nth-child(2)').textContent.split(' ')[1]);
+        const precioB = parseFloat(b.querySelector('.detalles > p:nth-child(2)').textContent.split(' ')[1]);
+
+        if (orden === 'ascendente') {
+            return precioA - precioB;
+        } else {
+            return precioB - precioA;
+        }
+    });
+
+    perifericos.forEach(periferico => resultados.appendChild(periferico));
+}
+
 function agregarAlCarrito(periferico) {
     carrito.push(periferico);
     calcularTotalCarrito();
@@ -150,8 +206,21 @@ function realizarCompra() {
         text: `El total de la compra es ${totalCarrito} USD`,
         icon: 'success',
         confirmButtonText: 'Aceptar'
+    }).then(() => {
+        vaciarCarrito();
     });
+
+    function vaciarCarrito() {
+        carrito = [];
+        totalCarrito = 0;
+        mostrarCarrito();
+        guardarCarrito();
+    }
+
 }
+
+
+
 
 const btnRealizarCompra = document.getElementById('btnRealizarCompra');
 btnRealizarCompra.addEventListener('click', realizarCompra);
